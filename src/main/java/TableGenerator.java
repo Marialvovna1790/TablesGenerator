@@ -20,7 +20,7 @@ public class TableGenerator {
         List<TestDataRow> dataRows = new PeopleDataGenerator(new DataProvider()).generateData(num);
         TestDataRenderer[] renderers = new TestDataRenderer[]{
                 new ConsoleRenderer(),
-//                new ExcelRenderer("People.xls"),
+                new ExcelRenderer("People.xls"),
                 new PdfRenderer("People.pdf")
         };
 
