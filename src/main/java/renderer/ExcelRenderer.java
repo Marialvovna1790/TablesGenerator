@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ExcelRenderer implements TestDataRenderer {
 
-    private String fileName;
+    private final String fileName;
 
     public ExcelRenderer(String fileName) {
         this.fileName = fileName;

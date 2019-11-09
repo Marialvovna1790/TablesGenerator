@@ -16,12 +16,12 @@ import java.util.List;
 
 public class PdfRenderer implements TestDataRenderer {
 
-    private String fileName;
+    private final String fileName;
     private final Font font;
 
     public PdfRenderer(String fileName) {
         this.fileName = fileName;
-        font = getFont();
+        this.font = getFont();
     }
 
     @Override
@@ -55,15 +55,13 @@ public class PdfRenderer implements TestDataRenderer {
     }
 
     private Font getFont() {
-        Font f;
         try {
             String file = PdfRenderer.class.getClassLoader().getResource("Roboto-Regular.ttf").getFile();
             BaseFont bf = BaseFont.createFont(file,BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            f = new Font(bf);
+            return new Font(bf);
         } catch (DocumentException | IOException e) {
             throw new RuntimeException("Can't find font", e);
         }
-        return f;
     }
 
     private void addRows(PdfPTable table, List<TestDataRow> rows) {
