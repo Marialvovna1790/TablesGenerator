@@ -6,7 +6,7 @@ import data.Gender;
 
 public class SurnameColumn extends BaseGenderNameColumn {
 
-    public static final int COLUMN_SURNAME = 1;
+    public static final int COLUMN_SURNAME = 0;
 
     public SurnameColumn(Gender gender, DataProvider dataProvider) {
         super(dataProvider, gender);
