@@ -56,8 +56,8 @@ public class PdfRenderer implements TestDataRenderer {
 
     private Font getFont() {
         try {
-            String file = PdfRenderer.class.getClassLoader().getResource("Roboto-Regular.ttf").getFile();
-            BaseFont bf = BaseFont.createFont(file,BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+//            String file = PdfRenderer.class.getClassLoader().getResource("Roboto-Regular.ttf").getFile();
+            BaseFont bf = BaseFont.createFont("Roboto-Regular.ttf",BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
             return new Font(bf);
         } catch (DocumentException | IOException e) {
             throw new RuntimeException("Can't find font", e);

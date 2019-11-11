@@ -15,7 +15,7 @@ public class TableGenerator {
             System.exit(1);
         }
         int num = Integer.parseInt(args[0]);
-        if (num <= 0 || num >= 30) throw new IllegalArgumentException("Число должно быть в диапазоне [1, 30]");
+        if (num < 0 || num > 30) throw new IllegalArgumentException("Число должно быть в диапазоне [1, 30]");
 
         List<TestDataRow> dataRows = new PeopleDataGenerator(new DataProvider()).generateData(num);
         TestDataRenderer[] renderers = new TestDataRenderer[]{
